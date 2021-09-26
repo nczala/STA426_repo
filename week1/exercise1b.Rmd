@@ -6,8 +6,7 @@ output: html_document
 ---
 
 Sample 100 values from a log-normal distribution (mu=1, sigma=.25):
-
-```{r cars}
+```{r}
 library(ggplot2)
 set.seed(1)
 
@@ -16,20 +15,17 @@ names(x)[1] <- 'sample'
 ```
 
 Create a histogram of the distribution:
-
 ```{r}
 ggplot(x, aes(x = x$sample)) + geom_histogram(bins = 20, colour = 'blue') + xlab('Sample')
 
 ```
 
 Create a histogram of the the distribution on the log scale:
-
 ```{r}
 ggplot(x, aes(x = log(x$sample))) + geom_histogram(bins = 20, color = 'red') + xlab('Sample (log-scale)')
 ```
 
 Report the mean and variance:
-
 ```{r}
 print(paste('The mean of the sample is:', round(mean(x$sample), 5),'.'))
 print(paste('The variance of the sample is:', round(var(x$sample),5),'.'))
